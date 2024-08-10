@@ -2,12 +2,20 @@ package com.example.eCommerce.service;
 
 import java.util.List;
 
-import com.example.eCommerce.entity.Cart;
-import com.example.eCommerce.entity.CartItem;
-import com.example.eCommerce.entity.Users;
+import com.example.eCommerce.dto.CartDto;
+import com.example.eCommerce.dto.CartItemDto;
+
 
 public interface CartService {
 
-	public List<Cart> addToCart(Users user, CartItem cartItem, String productName);
+	
+
+	public CartDto addToCart(int userId, int productId, int quantity);
+
+	public void deleteItemFromCart(int userId, int productId);
+
+	public List<CartItemDto> getAllItemFromCart(int cartItemId);
+
+	public CartItemDto updateCartItem(int userId, int productId, int quantity);
 
 }
